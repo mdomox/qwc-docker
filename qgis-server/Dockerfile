@@ -29,11 +29,11 @@ RUN chmod +x /etc/service/xvfb/run
 RUN apt-get update && apt-get install -y apache2 libapache2-mod-fcgid
 
 #QGIS Server
-RUN echo "deb http://qgis.org/debian-ltr bionic main" > /etc/apt/sources.list.d/qgis.org-debian.list
+RUN echo "deb http://qgis.org/debian-ltr xenial main" > /etc/apt/sources.list.d/qgis.org-debian.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key 51F523511C7028C3
 
 RUN apt-get update && apt-get install -y qgis-server
-RUN apt-get install -y python-qgis
+#RUN apt-get install -y python-qgis
 
 #RUN a2dismod mpm_event
 #RUN a2enmod mpm_worker
