@@ -7,7 +7,7 @@ MAINTAINER Pirmin Kalberer
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN apt-get update && apt-get upgrade -y
+#RUN apt-get update && apt-get upgrade -y
 
 #Fonts
 RUN apt-get update && apt-get install -y ttf-dejavu ttf-bitstream-vera fonts-liberation ttf-ubuntu-font-family
@@ -29,8 +29,8 @@ RUN chmod +x /etc/service/xvfb/run
 RUN apt-get update && apt-get install -y apache2 libapache2-mod-fcgid
 
 #QGIS Server
-#RUN echo "deb http://qgis.org/debian-ltr bionic main" > /etc/apt/sources.list.d/qgis.org-debian.list
-#RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key 51F523511C7028C3
+RUN echo "deb http://qgis.org/debian-ltr bionic main" > /etc/apt/sources.list.d/qgis.org-debian.list
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key 51F523511C7028C3
 
 RUN apt-get update && apt-get install -y qgis-server
 RUN apt-get install -y python-qgis
